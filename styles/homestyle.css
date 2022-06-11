@@ -17,7 +17,7 @@ body {
 }
 
 /* desktop code */
-@media screen and (min-width:750.1px) {
+@media screen and (min-width:750px) {
 
 .openbgr {
     display: none;
@@ -155,7 +155,7 @@ button:hover {
 }
 
 /* mobile code */
-@media screen and (max-width:750px) {
+@media screen and (max-width:750.1px) {
 
     header {
         display: none;
