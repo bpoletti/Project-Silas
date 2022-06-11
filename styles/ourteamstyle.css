@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --background-color: #000;
+    --background-main: white;
+    --primary-color: #05472a;
+    --secondary-color: #026239;
+    --pfp-color: #022a19;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+}
+
+/* desktop code */
+@media screen and (min-width:750.1px) {
+
+    .openbgr {
+        display: none;
+    }
+    
+    .sidenav {
+        display: none;
+    }
+    
+        /* main bar style */
+    header {
+        background-color: var(--background-color);
+        min-width: 100%;
+        border-bottom: 1.5px solid var(--primary-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.5s;
+        padding: 30px 30px;
+        z-index: 10000;
+    }
+    
+    header a{
+        float: left;
+        padding-right: 0.5em;
+        text-align: center;
+        text-decoration: none;
+        color: #f2f2f2;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        word-spacing: 0.5px;
+    }
+    
+    .active {
+        color: var(--secondary-color);
+    }
+    
+    header.sticky {
+        padding: 2px 50px;
+        opacity: 25%;
+    }
+    
+    header.sticky:hover {
+        opacity: 1;
+        transition: 0.5s;
+    }
+    
+    /* Silas logo */
+    header .logo {
+        float: left;
+        max-width: 4rem;
+        max-height: 4rem;
+        min-height: 4rem;
+        min-width: 4rem;
+        cursor: pointer;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    header ul li{
+        margin: 0 12px;
+        list-style: none;
+        padding-bottom: 0.3em;
+        display: inline-block;
+        transition: 0.7s;
+        position: relative;
+    }
+    
+    /* grey out words on nav bar when hovering*/
+    header ul li:hover{
+        opacity: 65%;
+    }
+    
+    /* green underline when hovering */
+    header ul li::after {
+        content: '';
+        min-height: 2px;
+        width: 0;
+        background: var(--primary-color);
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        transition: 0.45s;
+    }
+    
+    /* draw green across */
+    header ul li:hover::after {
+        width: 100%;
+    }
+    /* main bar style */
+
+    .img_box:hover .tres_img {
+        transform: rotateY(180deg);    
+    }
+
+    .img_box:hover .oxana_img {
+        transform: rotateY(180deg);
+    }
+
+    .img_box:hover .brandon_img {
+        transform: rotateY(180deg);
+    }
+
+    .img_back h1 {
+        text-align: center;
+        padding: 15% 15%;
+        font-size: 10.5pt;
+        font-weight: 400;
+    }
+
+    }
+  
+    /* mobile code */
+@media screen and (max-width:750px) {
+
+    header {
+        display: none;
+    }
+    .openbgr {
+        font-size: 26pt;
+        cursor: pointer;
+        z-index: 100000;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .opensec {
+        top: 0;
+        left: 0;
+        position: fixed;
+        padding-bottom: 3em;
+        padding-right: 2.2em;
+        background: var(--background-color);
+        border-radius: 0.1em;
+    }
+
+    .opensec:active {
+        opacity: 75%;
+    }
+
+    .opensec.sticky {
+        opacity: 90%;
+        z-index: 100000;
+    }
+    
+    .opensec.sticky:active {
+        opacity: 1;
+        transition: 0.5s;
+    }
+    
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 100000;
+        top: 0;
+        left: 0;
+        background-color: var(--background-color);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 3.75rem;
+        }
+        
+    .sidenav a {
+        padding: .5em .5em .5em 2em;
+        text-decoration: none;
+        font-size: 19pt;
+        color: #f2f2f2;
+        display: block;
+        transition: 0.4s;
+        letter-spacing: 0.5px;
+        word-spacing: 0.5px;
+        }
+
+    .sidenav .active {
+        color: var(--secondary-color);
+        }
+        
+    .sidenav a:focus {
+        opacity: 65%
+        }
+        
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 27pt;
+        margin-left: 3.13em;
+        }
+        
+    .img_box:active .tres_img, .img_box:focus .tres_img, .img_box:hover .tres_img {
+        transform: rotateY(180deg);
+           
+    }
+
+    .img_box:active .oxana_img, .img_box:focus .oxana_img, .img_box:hover .oxana_img {
+        transform: rotateY(180deg);
+    }
+    
+    .img_box:active .brandon_img, .img_box:focus .brandon_img, .img_box:hover .brandon_img {
+        transform: rotateY(180deg);
+    }
+
+    .img_back h1 {
+        text-align: center;
+        padding: 20% 15%;
+        font-size: 10pt;
+        font-weight: 400;
+    }
+
+}
+
+.team {
+    background: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.team h1 {
+    color: var(--primary-color);
+    position: relative;
+    padding-top: 3.5em;
+    padding-bottom: 2em;
+    text-transform: none;
+    text-align: center;
+    font-size: 44px;
+    font-weight: bolder;
+    
+}
+
+/* image flip code */
+.img_front {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-style:groove;
+    width: 22rem;
+    height: 22rem;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--pfp-color);
+    backface-visibility: hidden;
+    border-width:1px;
+    border-color:var(--primary-color);
+    box-shadow: 0px 0px 15px var(--primary-color);    
+}
+
+.tres_img .img_front img {
+    width: 100%;
+    height: auto;
+}
+
+.img_back {
+    z-index: -1;
+    border-radius: 50%;
+    width: 22rem;
+    height: 22rem;
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--background-color);
+    overflow: hidden;
+    border-color: var(--primary-color);
+    box-shadow: 0px 0px 15px var(--primary-color);
+}
+
+/* image flip code */
+
+.tres_img {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.7s;
+    transition-delay: 0.6s;
+}
+
+.tres_sec {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.tres_name {
+    position: relative;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: 300;
+    padding: 30px;
+    color: var(--primary-color);
+}
+
+.tres_title {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(27, 27, 27);
+    padding-bottom: 40px;
+}
+
+.oxana_sec {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.oxana_img .img_front img {
+    width: 100%;
+    height: auto;
+}
+
+.oxana_img {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.7s;
+    transition-delay: 0.6s;
+}
+
+.oxana_name {
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: 300;
+    padding: 30px;
+    color: var(--primary-color);
+}
+.oxana_title {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(27, 27, 27);
+    padding-bottom: 40px;
+}
+
+.brandon_img .img_front img{
+    width: 100%;
+    height: auto;
+}
+
+.brandon_img {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.7s;
+    transition-delay: 0.6s;
+}
+
+.brandon_sec {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+.brandon_name {
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: 300;
+    padding: 30px;
+    color: var(--primary-color);
+}
+.brandon_title {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(27, 27, 27);
+    padding-bottom: 40px;
+}

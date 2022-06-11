@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<link rel="stylesheet" href="/styles/contactus.css">
+<body>
+    <header>
+        <a href="/pages/home.html" class="logo"><img src="/images/Black-Logo.png" alt="/images/White-Logo.png" class="logo"></a> 
+         <ul>
+             <li><a href="/pages/home.html">Home</a></li>
+             <li><a href="/pages/ourteam.html">Our Team</a></li>
+             <!-- <li><a class="active" href="/pages/contactus.html">Contact Us</a></li> -->
+             <li><a href="/pages/genysis.html">G.E.N.Y.S.I.S</a></li>
+             <li><a href="/pages/careers.html">Careers</a></li>
+         </ul>
+    </header>
+    <section class="banner">
+        <div class="main">
+            <div class="contactcontain">
+                <div class="contactcontent">
+                    <h1>Wanna connect with us?</h1>
+                    <h2>Silas Company and Technology</h2>
+                    <a><button class="open-button" onclick="openForm()" type="button"><span></span>Click Here</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="popup">
+                <div class="popup_overlay"></div>
+                <div class="main_popup">
+                    <div class="form-popup" id="myForm">
+                        <form class="form-container" 
+                        action="https://formsubmit.co/tres.reeves@silascotech.com"
+                        method="POST">
+                            <h1>Conact Us</h1>
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeForm()">&times;</a>
+
+                            <input type="hidden" name="_subject" value="Customer trying to connect with us">
+                
+                            <input type="text" id="name" onkeyup="allFilled()" placeholder="Name*" name="name" required>
+                
+                            <input type="text" id="email" onkeyup="allFilled()" placeholder="Email*" name="email" required>
+
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <input type="hidden" name="_next" value="https://silascotec.com/pages/contactus.html">
+                
+                            <textarea name="message" onkeyup="allFilled()" id="input" role="textbox" placeholder="Message" id="" cols="30" rows="10"></textarea>
+                
+                            <button type="submit" id="submit" value="Submit" onclick="alert('Thank you for your submition')" class="btn" disabled="disabled"><span></span>Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/scripts/form.js"></script>
+    </section>
+    <script src="/scripts/navscroll.js"></script>
+    <div id="mobilesidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/pages/home.html">Home</a>
+        <a href="/pages/ourteam.html">Our Team</a>
+        <!-- <a class="active" href="/pages/contactus.html">Contact Us</a> -->
+        <a href="/pages/genysis.html">G.E.N.Y.S.I.S</a>
+        <a href="/pages/careers.html">Careers</a>
+    </div>
+    <script src="/scripts/sidenav.js"></script>
+    <a class="opensec">
+        <span id="open" class="openbgr" onclick="openNav()">&#9776;</span>
+    </a>
+</body>
+</html>
