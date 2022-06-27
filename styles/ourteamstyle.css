@@ -1,8 +1,6 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 :root {
@@ -14,11 +12,14 @@
 }
 
 body {
-    background-color: white;
+    background-color: var(--background-main);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
     min-height: 100vh;
 }
 
 /* desktop code */
+
 @media screen and (min-width:750.1px) {
 
     .openbgr {
@@ -41,8 +42,12 @@ body {
         justify-content: space-between;
         align-items: center;
         transition: 0.5s;
-        padding: 30px 30px;
+        padding: 30px 36px;
         z-index: 10000;
+    }
+
+    header ul {
+        margin-right: 3.5em;
     }
     
     header a{
@@ -70,7 +75,7 @@ body {
         transition: 0.5s;
     }
     
-    /* Silas logo */
+    /* Logo */
     header .logo {
         float: left;
         max-width: 4rem;
@@ -112,30 +117,33 @@ body {
     header ul li:hover::after {
         width: 100%;
     }
-    /* main bar style */
 
-    .img_box:hover .tres_img {
-        transform: rotateY(180deg);    
+    .card_face--front h2 {
+        color: var(--background-main);
+        font-size: 1.6em;
+        position: absolute;
+        opacity: 0;
     }
 
-    .img_box:hover .oxana_img {
+    .card_inner:hover {
         transform: rotateY(180deg);
+        transition-delay: 0.6s;
     }
 
-    .img_box:hover .brandon_img {
+    .card_inner_2:hover {
         transform: rotateY(180deg);
+        transition-delay: 0.6s;
     }
 
-    .img_back h1 {
-        text-align: center;
-        padding: 15% 15%;
-        font-size: 10.5pt;
-        font-weight: 400;
+    .card_inner_3:hover {
+        transform: rotateY(180deg);
+        transition-delay: 0.6s;
     }
 
     }
-  
-    /* mobile code */
+
+/* mobile code */
+
 @media screen and (max-width:750px) {
 
     header {
@@ -169,8 +177,8 @@ body {
         opacity: 90%;
         z-index: 100000;
     }
-    
-    .opensec.sticky:active {
+
+    .opensec.sticky:hover {
         opacity: 1;
         transition: 0.5s;
     }
@@ -202,8 +210,8 @@ body {
     .sidenav .active {
         color: var(--secondary-color);
         }
-        
-    .sidenav a:focus {
+
+    .sidenav a:hover {
         opacity: 65%
         }
         
@@ -214,27 +222,30 @@ body {
         font-size: 27pt;
         margin-left: 3.13em;
         }
-        
-    .img_box:active .tres_img, .img_box:focus .tres_img, .img_box:hover .tres_img {
-        transform: rotateY(180deg);
-           
-    }
 
-    .img_box:active .oxana_img, .img_box:focus .oxana_img, .img_box:hover .oxana_img {
-        transform: rotateY(180deg);
-    }
-    
-    .img_box:active .brandon_img, .img_box:focus .brandon_img, .img_box:hover .brandon_img {
-        transform: rotateY(180deg);
-    }
-
-    .img_back h1 {
+    .card_face--front h2 {
+        color: var(--background-main);
+        font-size: 1.6em;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
         text-align: center;
-        padding: 20% 15%;
-        font-size: 10pt;
-        font-weight: 400;
+        vertical-align: middle;
     }
 
+    .card_inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card_inner_2.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card_inner_3.is-flipped {
+        transform: rotateY(180deg);
+    }
+        
 }
 
 .team {
@@ -254,143 +265,124 @@ body {
     text-align: center;
     font-size: 44px;
     font-weight: bolder;
-    
-}
+} 
 
-/* image flip code */
-.img_front {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    border-style:groove;
+.card {
+    margin: 100px auto 0;
     width: 22rem;
     height: 22rem;
+    perspective: 900px;
+}
+
+.card_2 {
+    margin: 100px auto 0;
+    width: 22rem;
+    height: 22rem;
+    perspective: 900px;
+}
+
+.card_3 {
+    margin: 100px auto 0;
+    width: 22rem;
+    height: 22rem;
+    perspective: 900px;
+}
+
+.card_inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card_inner_2 {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card_inner_3 {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card_face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     overflow: hidden;
+    border-radius: 50%;
+    border-color:var(--primary-color);
+    box-shadow: 0px 0px 20px var(--primary-color); 
+}
+
+.card_face--front {
+    background-color: var(--pfp-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_face--back {
+    background-color: var(--background-main);
+    transform: rotateY(180deg);
+}
+
+.card_content {
+    width: 100%;
+    height: 100%;
+}
+
+.pfp {
+    display: block;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: var(--pfp-color);
-    backface-visibility: hidden;
-    border-width:1px;
-    border-color:var(--primary-color);
-    box-shadow: 0px 0px 15px var(--primary-color);    
+    border: 3px solid var(--pfp-color);
+    object-fit: cover;
 }
 
-.tres_img .img_front img {
-    width: 100%;
-    height: auto;
+.card_body {
+    padding: 30px;
 }
 
-.img_back {
-    z-index: -1;
-    border-radius: 50%;
-    width: 22rem;
-    height: 22rem;
-    transform: rotateY(180deg);
-    position: absolute;
-    top: 0;
-    left: 0;
+.card_body p {
     color: var(--background-color);
-    overflow: hidden;
-    border-color: var(--primary-color);
-    box-shadow: 0px 0px 15px var(--primary-color);
+    text-align: center;
+    padding: 8% 15%;
+    font-size: 9.5pt;
+    font-weight: 400;
 }
 
-/* image flip code */
-
-.tres_img {
-    position: relative;
-    transform-style: preserve-3d;
-    transition: 0.7s;
-    transition-delay: 0.6s;
-}
-
-.tres_sec {
-    position: relative;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    background: white;
-}
-
-.tres_name {
-    position: relative;
+.partner_name {
     text-decoration: none;
     text-shadow: none;
     font-weight: 300;
-    padding: 30px;
-    color: var(--primary-color);
-}
-
-.tres_title {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 300;
-    color: rgb(27, 27, 27);
-    padding-bottom: 40px;
-}
-
-.oxana_sec {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    background: white;
-}
-
-.oxana_img .img_front img {
-    width: 100%;
-    height: auto;
-}
-
-.oxana_img {
-    position: relative;
-    transform-style: preserve-3d;
-    transition: 0.7s;
-    transition-delay: 0.6s;
-}
-
-.oxana_name {
-    text-decoration: none;
-    text-shadow: none;
-    font-weight: 300;
+    align-items: center;
     padding: 30px;
     color: var(--primary-color);
 }
-.oxana_title {
+.partner_title {
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 300;
-    color: rgb(27, 27, 27);
-    padding-bottom: 40px;
-}
-
-.brandon_img .img_front img{
-    width: 100%;
-    height: auto;
-}
-
-.brandon_img {
-    position: relative;
-    transform-style: preserve-3d;
-    transition: 0.7s;
-    transition-delay: 0.6s;
-}
-
-.brandon_sec {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    background: white;
-}
-.brandon_name {
-    text-decoration: none;
-    text-shadow: none;
-    font-weight: 300;
-    padding: 30px;
-    color: var(--primary-color);
-}
-.brandon_title {
-    text-decoration: none;
-    font-size: 18px;
+    align-items: center;
+    font-size: 16px;
     font-weight: 300;
     color: rgb(27, 27, 27);
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }

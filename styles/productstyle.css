@@ -396,7 +396,7 @@ header {
     opacity: 90%;
 }
 
-.opensec.sticky:active {
+.opensec.sticky:hover {
     opacity: 1;
     transition: 0.5s;
 }
@@ -429,8 +429,8 @@ header {
     color: var(--primary-color);
 }
     
-.sidenav a:active {
-    opacity: 90%
+.sidenav a:hover {
+    opacity: 65%
 }
     
 .sidenav .closebtn {

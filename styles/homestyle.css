@@ -189,7 +189,7 @@ button:hover {
         transition: 0.5s;
     }
     
-    .opensec.sticky:active {
+    .opensec.sticky:hover {
         opacity: 1;
         transition: 0.5s;
     }
@@ -222,7 +222,7 @@ button:hover {
         color: var(--secondary-color);
     }
     
-    .sidenav a:active {
+    .sidenav a:hover {
         opacity: 65%
     }
     

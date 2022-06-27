@@ -166,7 +166,8 @@ button:hover {
 }
 /* Button Code */
 }
-    
+
+/* mobile code */    
 @media screen and (max-width:750px) {
 
 header {
@@ -230,7 +231,7 @@ header {
     }
 
     .sidenav .active {
-    color: #026239;
+        color: var(--secondary-color);
     }
     
     .sidenav a:hover {
